@@ -43,6 +43,10 @@ flowchart TD
 
 ```
 
+## Dataset
+Dataset can be downloaded from
+https://archive.ics.uci.edu/dataset/327/phishing+websites
+
 ## Key Features
 Config-driven: All stages controlled via YAML configs (paths, thresholds, model params)
 Artifact tracking: Each component outputs versioned artifacts (CSVs, .npy, .pkl)
