@@ -1,14 +1,14 @@
-# Network Security Anomaly Detection Pipeline (Tools usage would be finalized later)
+# Network Security Anomaly Detection Pipeline
 
 ## Overview
 
-An automated machine learning pipeline for detecting anomalies/intrusions in network traffic data. The system ingests network logs, validates and transforms features, trains classification models, and deploys accepted models to production.
+- An automated machine learning pipeline for detecting anomalies/intrusions in network traffic data. The system ingests network logs, validates and transforms features, trains classification models, and deploys accepted models to production.
 
 ## Architecture
 
-A sequential, config-driven pipeline with six core components:
+- A sequential, config-driven pipeline with six core components:
 
-Data Ingestion → Data Validation → Data Transformation → Model Training → Model Evaluation → Model Pusher
+- Data Ingestion → Data Validation → Data Transformation → Model Training → Model Evaluation → Model Pusher
 
 
 Each component:
@@ -48,11 +48,11 @@ Dataset can be downloaded from
 https://archive.ics.uci.edu/dataset/327/phishing+websites
 
 ## Key Features
-Config-driven: All stages controlled via YAML configs (paths, thresholds, model params)
-Artifact tracking: Each component outputs versioned artifacts (CSVs, .npy, .pkl)
-Drift detection: Monitors feature distribution shifts between train/test sets
-Imbalance handling: SMOTE-Tomek resampling for skewed network attack classes
-Deployment-ready: Final artifacts (model.pkl + preprocessing.pkl) packaged for AWS deployment (Docker/Kubernetes/ECS)
+- Config-driven: All stages controlled via YAML configs (paths, thresholds, model params)
+- Artifact tracking: Each component outputs versioned artifacts (CSVs, .npy, .pkl)
+- Drift detection: Monitors feature distribution shifts between train/test sets
+- Imbalance handling: SMOTE-Tomek resampling for skewed network attack classes
+- Deployment-ready: Final artifacts (model.pkl + preprocessing.pkl) packaged for AWS deployment (Docker/Kubernetes/ECS)
 
 ## Deployment Target
 Models deployed to AWS infrastructure:
@@ -60,22 +60,5 @@ Docker containerization
 Kubernetes/ECS orchestration
 AWS S3 for artifact storage
 
-## Setup
-
-
-Docker Setup In EC2 commands to be Executed
-#optinal
-
-sudo apt-get update -y
-
-sudo apt-get upgrade
-
-#required
-
-curl -fsSL https://get.docker.com -o get-docker.sh
-
-sudo sh get-docker.sh
-
-sudo usermod -aG docker ubuntu
-
-newgrp docker
+## Reference
+Sample project from MLOps Bootcamp course by Krish Naik
