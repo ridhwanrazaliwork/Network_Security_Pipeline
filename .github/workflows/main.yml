@@ -66,24 +66,7 @@ jobs:
     needs: build-and-push-ecr-image
     runs-on: self-hosted # its like event listener, it will listen to the event of build-and-push-ecr-image and then trigger the deployment
     steps:
-
-      # CLEANUP BEFORE - Clear old stuff
-      - name: Pre-deployment cleanup
-        run: |
-          echo "=== Disk space before cleanup ==="
-          df -h
-          
-          # Stop and remove old container
-          docker stop networksecurity || true
-          docker rm -fv networksecurity || true
-          
-          # Remove dangling images/containers
-          docker system prune -f --volumes || true
-          docker image prune -a -f || true
-          
-          echo "=== Disk space after cleanup ==="
-          df -h
-
+      
       - name: Checkout
         uses: actions/checkout@v3
 
