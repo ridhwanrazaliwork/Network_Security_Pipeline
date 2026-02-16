@@ -81,9 +81,6 @@ jobs:
           docker system prune -f --volumes || true
           docker image prune -a -f || true
           
-          # Clean runner temp files
-          rm -rf /home/ubuntu/actions-runner/_work/_temp/* || true
-          
           echo "=== Disk space after cleanup ==="
           df -h
 
@@ -120,7 +117,6 @@ jobs:
           echo "=== Final cleanup ==="
           docker system prune -f --volumes || true
           docker image prune -a -f || true
-          rm -rf /home/ubuntu/actions-runner/_work/* || true
           
 
       
