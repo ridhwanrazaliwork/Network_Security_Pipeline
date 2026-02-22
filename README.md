@@ -99,5 +99,32 @@ graph TD
 6. **EC2 Deployment** → Application runs on EC2 instance in production
 7. **Live Service** → Network security model actively detecting anomalies
 
+---
+
+## 🧹 Cleanup (Important: Avoid AWS Costs)
+
+⚠️ **To prevent unexpected charges, clean up these AWS resources after testing:**
+
+1. **Delete AWS App Runner Service**
+   - AWS Console → App Runner → Services → Select service → Delete
+
+2. **Delete ECR Repository**
+   - AWS Console → ECR → Repositories → Select repository → Delete repository
+
+3. **Terminate EC2 Instance** (if applicable)
+   - AWS Console → EC2 → Instances → Select instance → Terminate instances
+
+4. **Remove Security Groups**
+   - AWS Console → EC2 → Security Groups → Delete any custom groups
+
+5. **Delete CloudWatch Logs**
+   - AWS Console → CloudWatch → Logs → Select log group → Delete log group
+
+6. **Disable MongoDB Atlas Cluster** (if using cloud database)
+   - MongoDB Atlas → Clusters → Pause/Terminate cluster
+
+
+---
+
 ## Reference
 Sample project from MLOps Bootcamp course by Krish Naik
